@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   
+    <title>Document</title>
+    <script>
+        function checkPassword(){
+            var password = document.getElementById("password").value
+            var confrimpassword = documnet.getElementById("confrimPassword").value
+
+            if(password==confrimpassword){
+                alert('password match')
+
+            }
+            else{
+                alert('password do not match,Please Try Again')
+             }
+        }
+    </script>
+</head>
+<body class="containe-fluid " >
+    <main class="d-flex justify-content-center mt-4" >
+        <form class="border border-primary bg-dark text-white w-25 p-2 rounded rounded-2" >
+            <h3  class="bi bi-person text-white">Register User</h3>
+            <div class="mb-3" >
+                <label>First Name</label>
+                <div>
+                    <input  type="text" class="form-control" required>
+                </div>
+            </div>
+            <div class="mb-3" >
+                <label>Last Name</label>
+                <div>
+                    <input  type="text" class="form-control" required>
+                </div>
+            </div>
+            <div class="mb-3" >
+                <label>email Id</label>
+                <div>
+                    <input  type="email" class="form-control" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Age</label>
+                <div>
+                    <input type="text" class="form-control" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Mobile Number</label>
+                <div>
+                    <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required class="form-control">
+                </div>
+            </div>
+            <div class="mb-3"> 
+                <label >Password</label>
+            <div>
+                <input type="password" class="form-control" id="password" minlength="8" pattern=".{8,}" title="Password must be at least 8 characters long"  required>
+            </div>
+        </div>
+        <div class="mb-3"> 
+            <label >Confirm Password</label>
+        <div>
+            <input type="password" class="form-control" id="confrimPassword"  required>
+            
+        </div>
+    </div>
+        <div class="mb-3">
+            <label>City</label>
+            <div>
+                <select class="form-select" required>
+                    <option >Your City</option>
+                    <option >Hyd</option>
+                    <option >Chennai</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div>
+            <button onclick="checkPassword()">Register</button>
+           
+        </div>
+        <div>
+            <a href="http://127.0.0.1:5500/public/home.html">
+            <button>Submit</button></a>
+        </div>
+        </form>
+
+    </main>
+    <script src="1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
