@@ -1,4 +1,4 @@
-# build the image of ecommerce and push to docker hub
+# build the image of ecommerce and push to docker hub image
 name: CI
 
 on: 
