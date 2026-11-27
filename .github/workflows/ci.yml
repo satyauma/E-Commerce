@@ -1,29 +1,28 @@
-# build the image of ecommerce and push to docker hub image
-name: CI
 
-on: 
+name: E-Commerce CI
+
+on:
   push:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
-      - name: Docker Setup [Login]
-        uses: docker/login-action@v4
+      - name: Docker Hub Login
+        uses: docker/login-action@v3
         with:
-            username: ${{ vars.DOCKERHUB_USERNAME }}
-            password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Docker Build and Push
-        uses: docker/build-push-action@v7
+        uses: docker/build-push-action@v6
         with:
+          context: .
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/E-Commerce:latest
-        
-
-
-    
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/e-commerce:latest
